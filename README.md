@@ -1,93 +1,53 @@
-# iTerm2 — Delightful Theme
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="screenshots/iTerm2-Dark.png" />
+    <source media="(prefers-color-scheme: light)" srcset="screenshots/iTerm2-Light.png" />
+    <img src="screenshots/iTerm2-Light.png" width="600" alt="iTerm2 — Delightful" />
+  </picture>
+</p>
 
-iTerm2 color profiles derived from the Delightful Design System.
+<h1 align="center">Delightful for iTerm2</h1>
 
-![Delightful iTerm2 theme](screenshot.png)
+<p align="center">
+  Warm terminal colors derived from the <a href="https://github.com/kylesnav/delightful-design-system">Delightful Design System</a>.
+</p>
 
-## Contents
+---
 
-```
-colors/
-  Delightful.itermcolors        Light color profile (XML plist)
-  Delightful-Dark.itermcolors   Dark color profile (XML plist)
-scripts/
-  generate-profiles.mjs         Generates profiles from hex palette
-```
+## Theme
 
-## Regenerate Profiles
+The color profiles are portable — import them into any iTerm2 setup.
 
-If primitive token hex values change, regenerate the profiles:
-
-```bash
-node scripts/generate-profiles.mjs
-```
-
-The hex palette in the script matches the Ghostty theme files exactly — update one, update both.
-
-## Install Color Profile
-
-### Import via iTerm2 Settings
-
-1. Open iTerm2
-2. Go to **Settings > Profiles > Colors**
-3. Click the **Color Presets...** dropdown (bottom right)
-4. Select **Import...**
-5. Navigate to `colors/Delightful.itermcolors` (or `Delightful-Dark.itermcolors`) and open it
-6. Click **Color Presets...** again and select **Delightful** (or **Delightful-Dark**)
-
-### Import via command line
+### Install
 
 ```bash
-open colors/Delightful.itermcolors
+open colors/Delightful-Light.itermcolors
+open colors/Delightful-Dark.itermcolors
 ```
 
-This opens the file in iTerm2 and registers the color preset. Then select it in Settings > Profiles > Colors > Color Presets.
+Or import manually: **Settings > Profiles > Colors > Color Presets... > Import...**
 
-## Recommended iTerm2 Settings
+### Automatic light/dark switching
 
-These settings make iTerm2 look cleaner and closer to Ghostty's minimal chrome:
+1. Go to **Settings > Profiles > Colors**
+2. Check **"Use separate colors for light and dark mode"**
+3. Set **Editing** to **Light Mode**
+4. Click **Color Presets...** and select **Delightful-Light** > **Update Light Mode Only**
+5. Set **Editing** to **Dark Mode**
+6. Click **Color Presets...** and select **Delightful-Dark** > **Update Dark Mode Only**
 
-| Setting | Path | Value |
-|---------|------|-------|
-| Theme | Appearance > General > Theme | **Minimal** |
-| Pane title bars | Appearance > Panes > "Show per-pane title bar with split panes" | **Off** |
-| Scroll bars | System Settings > Appearance > "Show scroll bars" | **When scrolling** |
+iTerm2 will switch between light and dark colors automatically with macOS appearance.
 
-## Key Mappings
+### Color Mapping
 
-### Shift+Enter → Newline (for Claude Code)
+All colors map to Delightful Design System tokens. The palette is identical to the [Ghostty theme](https://github.com/kylesnav/delightful-design-system/tree/main/ghostty) — both are generated from the same OKLCH primitives.
 
-By default iTerm2 sends a CSI u escape sequence for Shift+Enter, which Claude Code treats the same as Enter (submit). To make Shift+Enter insert a newline instead (matching Ghostty behavior):
+<details>
+<summary><strong>Full token mapping</strong></summary>
 
-1. Open iTerm2
-2. Go to **Settings > Profiles > Keys > Key Mappings**
-3. Click **+** (or edit the existing Shift+Enter mapping)
-4. Set **Keyboard Shortcut** to **Shift+Enter**
-5. Set **Action** to **Send Hex Code**
-6. Set **Value** to `0a`
-7. Click **OK**
+<br>
 
-Or apply via command line:
-
-```bash
-/usr/libexec/PlistBuddy -c "Add ':New Bookmarks:0:Keyboard Map:0xd-0x20000-0x24' dict" ~/Library/Preferences/com.googlecode.iterm2.plist 2>/dev/null
-/usr/libexec/PlistBuddy -c "Set ':New Bookmarks:0:Keyboard Map:0xd-0x20000-0x24:Action' 11" ~/Library/Preferences/com.googlecode.iterm2.plist
-/usr/libexec/PlistBuddy -c "Set ':New Bookmarks:0:Keyboard Map:0xd-0x20000-0x24:Text' 0a" ~/Library/Preferences/com.googlecode.iterm2.plist
-```
-
-Restart iTerm2 after applying.
-
-## Starship Prompt & Zsh
-
-See the [shell config](https://github.com/kylesnav/delightful-design-system/tree/main/shell) in the design system monorepo for the shared Starship prompt and zsh config. These work with any terminal.
-
-## Claude Code
-
-After applying the iTerm2 theme, run `/config` in Claude Code and set the theme to **light-ansi**. This makes Claude Code inherit the Delightful palette from your terminal.
-
-## Token Mapping
-
-| Terminal Color | Design Token | Light Hex | Dark Hex |
+| Terminal Color | Design Token | Light | Dark |
 |----------------|--------------------------|-----------|-----------|
 | Background | bg-page | `#fdf8f3` | `#1e1a16` |
 | Foreground | text-primary | `#1b150f` | `#eee9e3` |
@@ -96,27 +56,102 @@ After applying the iTerm2 theme, run `/config` in Claude Code and set the theme 
 | Black | neutral-950 | `#16100c` | `#1e1a16` |
 | Red | red-400 | `#ed324b` | `#e8554c` |
 | Green | green-400 | `#22a448` | `#3aad5f` |
-| Yellow | gold-400 | `#febf00` | `#f5c526` |
-| Blue | cyan-400 | `#00a6c0` | `#5cb8d6` |
+| Yellow | gold-500 | `#c67e00` | `#f5c526` |
+| Blue | cyan-400 | `#00a6c0` | `#00a6c0` |
 | Magenta | pink-400 | `#f600a3` | `#ff4fa8` |
 | Cyan | cyan-300 | `#17c0d6` | `#5cb8d6` |
 | White | neutral-100 | `#f6f1eb` | `#eee9e3` |
 | Bright Black | neutral-600 | `#615d58` | `#615d58` |
 | Bright Red | red-300 | `#ff6e74` | `#ff6e74` |
 | Bright Green | green-300 | `#60c072` | `#60c072` |
-| Bright Yellow | gold-300 | `#ffcb3f` | `#ffcb3f` |
+| Bright Yellow | gold-500 | `#c67e00` | `#ffcb3f` |
 | Bright Blue | cyan-200 | `#88ddec` | `#88ddec` |
 | Bright Magenta | pink-300 | `#ff5cb8` | `#ff7cc6` |
 | Bright Cyan | cyan-200 | `#88ddec` | `#88ddec` |
 | Bright White | white | `#ffffff` | `#ffffff` |
 
 Blue slots use the cyan hue at different lightness levels since Delightful has no dedicated blue.
+Bright yellow reuses normal yellow in light mode for legibility on the cream background.
 
-## References
+</details>
 
-| Tool | Repo | Docs |
-|------|------|------|
-| Delightful Design System | [kylesnav/delightful-design-system](https://github.com/kylesnav/delightful-design-system) | — |
-| iTerm2 | [gnachman/iTerm2](https://github.com/gnachman/iTerm2) | [iterm2.com](https://iterm2.com) |
-| Claude Code | [anthropics/claude-code](https://github.com/anthropics/claude-code) | [docs.anthropic.com](https://docs.anthropic.com/en/docs/claude-code) |
-| Starship | [starship/starship](https://github.com/starship/starship) | [starship.rs](https://starship.rs) |
+## Full Experience
+
+Recommended settings that make iTerm2 feel more polished. These are opinionated preferences, not required for the theme.
+
+### Appearance
+
+| Setting | Path | Value |
+|---------|------|-------|
+| Theme | Appearance > General > Theme | **Minimal** |
+| Pane title bars | Appearance > Panes > "Show per-pane title bar..." | **Off** |
+| Scroll bars | System Settings > Appearance > "Show scroll bars" | **When scrolling** |
+| Font | Profiles > Text > Font | **Monaco 12** |
+
+<details>
+<summary><strong>tmux integration</strong></summary>
+
+<br>
+
+Settings under **General > tmux**:
+
+| Setting | Value |
+|---------|-------|
+| Restore windows as | **Tabs in the attaching window** |
+| Bury tmux client after connecting | **On** |
+| Use "tmux" profile | **Off** |
+| Status bar shows tmux content | **On** |
+| Pause pane catch-up threshold | **120s** |
+| Warn before pausing | **On** |
+| Unpause automatically | **Off** |
+| Mirror paste buffer | **Off** |
+
+</details>
+
+<details>
+<summary><strong>Shift+Enter for Claude Code</strong></summary>
+
+<br>
+
+By default, iTerm2's Shift+Enter submits instead of inserting a newline. To fix this (matching Ghostty behavior):
+
+1. Go to **Settings > Profiles > Keys > Key Mappings**
+2. Add or edit the Shift+Enter mapping
+3. Set **Action** to **Send Hex Code**, value `0a`
+
+Or apply via command line:
+
+```bash
+/usr/libexec/PlistBuddy -c "Add ':New Bookmarks:0:Keyboard Map:0xd-0x20000-0x24' dict" ~/Library/Preferences/com.googlecode.iterm2.plist 2>/dev/null
+/usr/libexec/PlistBuddy -c "Add ':New Bookmarks:0:Keyboard Map:0xd-0x20000-0x24:Action' integer 11" ~/Library/Preferences/com.googlecode.iterm2.plist 2>/dev/null || \
+/usr/libexec/PlistBuddy -c "Set ':New Bookmarks:0:Keyboard Map:0xd-0x20000-0x24:Action' 11" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Add ':New Bookmarks:0:Keyboard Map:0xd-0x20000-0x24:Text' string 0a" ~/Library/Preferences/com.googlecode.iterm2.plist 2>/dev/null || \
+/usr/libexec/PlistBuddy -c "Set ':New Bookmarks:0:Keyboard Map:0xd-0x20000-0x24:Text' 0a" ~/Library/Preferences/com.googlecode.iterm2.plist
+```
+
+Restart iTerm2 after applying.
+
+</details>
+
+### Claude Code
+
+After applying the theme, run `/config` in Claude Code and set the theme to **light-ansi** or **dark-ansi** (matching your terminal theme). Claude Code inherits the Delightful palette from your terminal.
+
+## Regenerating
+
+If token hex values change, regenerate the profiles:
+
+```bash
+node scripts/generate-profiles.mjs
+```
+
+The hex palette matches the Ghostty theme files exactly — update one, update both.
+
+## Related
+
+- [`shell/`](https://github.com/kylesnav/delightful-design-system/tree/main/shell) — Starship prompt and zsh config (works with any terminal)
+- [`ghostty/`](https://github.com/kylesnav/delightful-design-system/tree/main/ghostty) — Ghostty theme using the same palette
+
+## License
+
+[MIT](LICENSE)
