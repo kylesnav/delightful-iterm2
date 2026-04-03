@@ -149,7 +149,8 @@ The hex palette matches the Ghostty theme files exactly — update one, update b
 
 ## Related
 
-- [`shell/`](https://github.com/kylesnav/delightful-design-system/tree/main/shell) — Starship prompt and zsh config (works with any terminal)
+- [`shell/`](https://github.com/kylesnav/delightful-design-system/tree/main/shell) — Tmux, zsh config, and terminal utilities
+- [`starship/`](https://github.com/kylesnav/delightful-design-system/tree/main/starship) — Starship prompt theme
 - [`ghostty/`](https://github.com/kylesnav/delightful-design-system/tree/main/ghostty) — Ghostty theme using the same palette
 
 ## License
