@@ -9,23 +9,23 @@
 <h1 align="center">Delightful for iTerm2</h1>
 
 <p align="center">
-  Warm terminal colors derived from the <a href="https://github.com/kylesnav/delightful-design-system">Delightful Design System</a>.
+  iTerm2 color profiles using the warm OKLCH palette from the <a href="https://github.com/kylesnav/delightful-design-system">Delightful Design System</a>.
 </p>
 
 ---
 
-## Theme
+## Install
 
-The color profiles are portable — import them into any iTerm2 setup.
+1. Download `Delightful-Light.itermcolors` and/or `Delightful-Dark.itermcolors` from the [`colors/`](colors/) directory
+2. Double-click to open — iTerm2 imports automatically
+3. Set as default: **Settings > Profiles > Colors > Color Presets...** and select the profile
 
-### Install
+Or import via command line:
 
 ```bash
 open colors/Delightful-Light.itermcolors
 open colors/Delightful-Dark.itermcolors
 ```
-
-Or import manually: **Settings > Profiles > Colors > Color Presets... > Import...**
 
 ### Automatic light/dark switching
 
@@ -38,9 +38,9 @@ Or import manually: **Settings > Profiles > Colors > Color Presets... > Import..
 
 iTerm2 will switch between light and dark colors automatically with macOS appearance.
 
-### Color Mapping
+### Color mapping
 
-All colors map to Delightful Design System tokens. The palette is identical to the [Ghostty theme](https://github.com/kylesnav/delightful-design-system/tree/main/ghostty) — both are generated from the same OKLCH primitives.
+All colors map to Delightful Design System tokens. The palette is identical to the [Ghostty theme](https://github.com/kylesnav/delightful-ghostty) — both are generated from the same OKLCH primitives.
 
 <details>
 <summary><strong>Full token mapping</strong></summary>
@@ -56,7 +56,7 @@ All colors map to Delightful Design System tokens. The palette is identical to t
 | Black | neutral-950 | `#16100c` | `#1e1a16` |
 | Red | red-400 | `#ed324b` | `#e8554c` |
 | Green | green-400 | `#22a448` | `#3aad5f` |
-| Yellow | gold-500 | `#c67e00` | `#f5c526` |
+| Yellow | gold-400 | `#febf00` | `#f5c526` |
 | Blue | cyan-400 | `#00a6c0` | `#00a6c0` |
 | Magenta | pink-400 | `#f600a3` | `#ff4fa8` |
 | Cyan | cyan-300 | `#17c0d6` | `#5cb8d6` |
@@ -64,18 +64,17 @@ All colors map to Delightful Design System tokens. The palette is identical to t
 | Bright Black | neutral-600 | `#615d58` | `#615d58` |
 | Bright Red | red-300 | `#ff6e74` | `#ff6e74` |
 | Bright Green | green-300 | `#60c072` | `#60c072` |
-| Bright Yellow | gold-500 | `#c67e00` | `#ffcb3f` |
+| Bright Yellow | gold-200 | `#ffcb3f` | `#ffcb3f` |
 | Bright Blue | cyan-200 | `#88ddec` | `#88ddec` |
 | Bright Magenta | pink-300 | `#ff5cb8` | `#ff7cc6` |
 | Bright Cyan | cyan-200 | `#88ddec` | `#88ddec` |
 | Bright White | white | `#ffffff` | `#ffffff` |
 
 Blue slots use the cyan hue at different lightness levels since Delightful has no dedicated blue.
-Bright yellow reuses normal yellow in light mode for legibility on the cream background.
 
 </details>
 
-## Full Experience
+## Full experience
 
 Recommended settings that make iTerm2 feel more polished. These are opinionated preferences, not required for the theme.
 
@@ -139,19 +138,19 @@ After applying the theme, run `/config` in Claude Code and set the theme to **li
 
 ## Regenerating
 
-If token hex values change, regenerate the profiles:
+If palette values change, regenerate the profiles:
 
 ```bash
 node scripts/generate-profiles.mjs
 ```
 
-The hex palette matches the Ghostty theme files exactly — update one, update both.
+## Part of Delightful
 
-## Related
+This is one of several terminal ports of the [Delightful Design System](https://github.com/kylesnav/delightful-design-system):
 
-- [`shell/`](https://github.com/kylesnav/delightful-design-system/tree/main/shell) — Tmux, zsh config, and terminal utilities
-- [`starship/`](https://github.com/kylesnav/delightful-design-system/tree/main/starship) — Starship prompt theme
-- [`ghostty/`](https://github.com/kylesnav/delightful-design-system/tree/main/ghostty) — Ghostty theme using the same palette
+- [delightful-ghostty](https://github.com/kylesnav/delightful-ghostty) — Ghostty theme using the same palette
+- [delightful-starship](https://github.com/kylesnav/delightful-starship) — Starship prompt theme
+- [delightful-shell](https://github.com/kylesnav/delightful-shell) — Tmux, zsh config, and terminal utilities
 
 ## License
 
