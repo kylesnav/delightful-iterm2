@@ -64,7 +64,7 @@ All colors map to Delightful Design System tokens. The palette is identical to t
 | Bright Black | neutral-600 | `#615d58` | `#615d58` |
 | Bright Red | red-300 | `#ff6e74` | `#ff6e74` |
 | Bright Green | green-300 | `#60c072` | `#60c072` |
-| Bright Yellow | gold-200 | `#ffcb3f` | `#ffcb3f` |
+| Bright Yellow | gold-300 | `#ffcb3f` | `#ffcb3f` |
 | Bright Blue | cyan-200 | `#88ddec` | `#88ddec` |
 | Bright Magenta | pink-300 | `#ff5cb8` | `#ff7cc6` |
 | Bright Cyan | cyan-200 | `#88ddec` | `#88ddec` |
