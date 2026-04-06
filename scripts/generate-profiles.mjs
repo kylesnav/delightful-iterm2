@@ -4,7 +4,7 @@
  * Generate iTerm2 color profiles (.itermcolors) from the Delightful hex palette.
  *
  * Hex values are the single source of truth — identical to the Ghostty theme files.
- * Run: node iterm2/scripts/generate-profiles.mjs
+ * Run: node scripts/generate-profiles.mjs
  */
 
 import { writeFileSync } from "fs";
