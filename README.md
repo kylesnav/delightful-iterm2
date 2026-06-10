@@ -1,9 +1,5 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="screenshots/iTerm2-Dark.png" />
-    <source media="(prefers-color-scheme: light)" srcset="screenshots/iTerm2-Light.png" />
-    <img src="screenshots/iTerm2-Light.png" width="600" alt="iTerm2 — Delightful" />
-  </picture>
+
 </p>
 
 <h1 align="center">Delightful for iTerm2</h1>
