@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="screenshots/iTerm2-Dark.png" width="760" alt="iTerm2 running Delightful dark profile with Starship and Claude Code" />
+  <img src="screenshots/iTerm2-Dark.png" width="760" alt="iTerm2 running Delightful dark profile with the Starship status line" />
 </p>
 
 <h1 align="center">Delightful for iTerm2</h1>
