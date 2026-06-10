@@ -24,4 +24,4 @@ The generated files must match committed output unless the palette intentionally
 
 ## Screenshots
 
-Screenshots should show real iTerm2 light and dark profiles. Refresh them when the generated profiles or recommended appearance settings visibly change.
+Screenshots should show a real iTerm2 session using the Delightful dark profile. Refresh them when the generated profiles or recommended appearance settings visibly change.
